@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Virgin Aminos</title>
+  <meta name="description" content="Contact Virgin Aminos for product questions, custom orders, and wholesale inquiries via WhatsApp +1 (714) 818-5255, Instagram, or email.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero" style="padding-top:24px;">
+    <div class="container">
+      <div class="page-banner">
+        <div class="breadcrumb">Home / Contact</div>
+        <h1>Contact Us</h1>
+        <p>Questions, custom orders, or wholesale inquiries? Our team is available Monday through Friday.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center" style="margin-bottom:42px;">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="section-title">We're here to help</h2>
+        <p class="section-sub">Reach out through any channel below — WhatsApp is the fastest way to place an order or ask a question.</p>
+      </div>
+      <div class="contact-grid" id="contactGrid"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="support-card" id="supportCard"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Research Use Only.</strong> Virgin Aminos products are intended strictly for laboratory and research purposes and are not for human or veterinary use.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    initShell("contact");
+    buildSupportCard("supportCard");
+    const tiles = [
+      [ICONS.whatsapp_line, "WhatsApp", "Fastest way to order or ask questions.", VA.phoneDisplay, waQuestion(), true],
+      [ICONS.instagram, "Instagram", "Follow us for updates and announcements.", "@_masreya", VA.instagram, true],
+      [ICONS.mail, "Email", "For documentation and wholesale inquiries.", VA.email, "mailto:" + VA.email, false],
+    ];
+    document.getElementById("contactGrid").innerHTML = tiles.map(([ic,title,desc,val,href,ext]) =>
+      `<div class="contact-tile">
+        <div class="c-ico">${ic}</div>
+        <h3>${title}</h3>
+        <p>${desc}</p>
+        <p style="margin-top:10px;"><a href="${href}" ${ext ? 'target="_blank" rel="noopener"' : ''}>${val}</a></p>
+      </div>`).join("");
+  </script>
+</body>
+</html>

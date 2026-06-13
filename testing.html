@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing &amp; Quality — Virgin Aminos</title>
+  <meta name="description" content="How Virgin Aminos approaches quality: U.S.-based standards, high-purity production, third-party testing, controlled environments, and batch-level accountability.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero" style="padding-top:24px;">
+    <div class="container">
+      <div class="page-banner">
+        <div class="breadcrumb">Home / Testing</div>
+        <h1>Testing &amp; Quality</h1>
+        <p>Precision at every stage — from sourcing and production to independent verification and documentation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Our Approach</span>
+        <h2 class="section-title">Quality you can document</h2>
+        <p class="section-sub" style="margin-bottom:20px;">We believe trustworthy research starts with trustworthy materials. That is why we prioritize transparency, independent testing, and careful handling at every step.</p>
+        <div class="stack-lg" id="testingList"></div>
+      </div>
+      <div class="media-card" id="testVisual">
+        <span class="media-caption">Third-party verified</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--light-bg);">
+    <div class="container">
+      <div class="center" style="margin-bottom:42px;">
+        <span class="eyebrow">Quality &amp; Manufacturing</span>
+        <h2 class="section-title">Precision at Every Stage</h2>
+        <p class="section-sub">Five pillars that guide how we source, produce, test, and document our research compounds.</p>
+      </div>
+      <div class="quality-grid" id="qualityGrid"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Have a question about testing or COAs?</h2>
+        <p>Reach out for documentation requests, custom orders, and wholesale inquiries. Our team is happy to help.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" id="ctaWa" href="#" target="_blank" rel="noopener">Contact on WhatsApp</a>
+          <a class="btn btn-outline-white" href="products.html">Browse Catalog <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Research Use Only.</strong> Testing and quality practices described here support research integrity. Products are not intended to diagnose, treat, cure, or prevent any disease and are not for human or veterinary use.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    initShell("testing");
+    document.getElementById("testVisual").insertAdjacentHTML("afterbegin", ICONS.flask);
+    renderQuality("qualityGrid");
+    document.getElementById("ctaWa").href = waQuestion();
+    document.getElementById("ctaWa").innerHTML = ICONS.whatsapp + " Contact on WhatsApp";
+    const tl = document.getElementById("testingList");
+    tl.innerHTML = [
+      "Independent third-party identity and purity testing",
+      "Certificates of analysis available on request",
+      "Batch-level tracking and documentation",
+      "Controlled storage and handling conditions",
+    ].map(t => `<div class="trust-item">${ICONS.check}<span>${t}</span></div>`).join("");
+  </script>
+</body>
+</html>

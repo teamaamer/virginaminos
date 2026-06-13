@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Virgin Aminos</title>
+  <meta name="description" content="Notes and resources from Virgin Aminos on research peptide handling, storage, quality, and best practices. For Research Use Only.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero" style="padding-top:24px;">
+    <div class="container">
+      <div class="page-banner">
+        <div class="breadcrumb">Home / Blog</div>
+        <h1>Research Notes</h1>
+        <p>Educational resources on research peptide handling, storage, and quality — written for the lab.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid" id="blogGrid"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Research Use Only.</strong> Articles are educational and research-focused. Nothing here is medical advice; products are not intended to diagnose, treat, cure, or prevent any disease.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    initShell();
+    const posts = [
+      ["dna", "Handling", "Reconstitution Basics for Research Peptides", "A clear overview of best practices for preparing lyophilized peptides in a controlled lab setting.", "5 min read"],
+      ["drop", "Storage", "Storing Peptides: Temperature & Stability", "Why controlled storage matters and how to protect compound integrity over time.", "4 min read"],
+      ["doc", "Quality", "Understanding a Certificate of Analysis", "How to read identity and purity data and what to look for in third-party testing.", "6 min read"],
+      ["molecule", "Categories", "An Introduction to Peptide Categories", "A high-level look at the research categories represented across our catalog.", "5 min read"],
+      ["shield", "Best Practices", "Documentation & Batch Tracking", "How batch-level records support reproducible research and transparency.", "3 min read"],
+      ["beaker", "Lab Notes", "Setting Up a Clean Research Workflow", "Simple habits that keep research organized, consistent, and well-documented.", "4 min read"],
+    ];
+    document.getElementById("blogGrid").innerHTML = posts.map(([ic,tag,title,desc,meta]) =>
+      `<article class="blog-card">
+        <div class="blog-thumb">${ICONS[ic]}</div>
+        <div class="blog-body">
+          <span class="tag">${tag}</span>
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          <span class="meta">${meta}</span>
+        </div>
+      </article>`).join("");
+  </script>
+</body>
+</html>

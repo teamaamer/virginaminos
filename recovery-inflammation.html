@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery/Inflammation — Research Peptides | Virgin Aminos</title>
+  <meta name="description" content="Recovery/Inflammation research peptides and blends from Virgin Aminos — BPC-157, TB-500, KPV, MGF, Wolverine blends and more. For Research Use Only.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:24px;">
+    <div class="container">
+      <div class="cat-hero">
+        <div class="cat-hero-content">
+          <div class="hero-line"></div>
+          <div class="breadcrumb" style="color:var(--accent);">Home / Recovery/Inflammation</div>
+          <h1>Recovery/Inflammation</h1>
+          <p>Advance research into tissue repair and inflammatory response with our Recovery/Inflammation peptide collection. This category features research compounds studied in controlled laboratory environments for cellular recovery, inflammatory response models, and tissue-related pathway research.</p>
+          <p>Each compound is manufactured to strict purity standards and distributed for laboratory research use only, ensuring consistency and reliability for scientific applications.</p>
+        </div>
+        <div class="cat-hero-visual">
+          <span class="float-badge b1" id="badge1"></span>
+          <span class="float-badge b2" id="badge2"></span>
+          <div class="vial-stage" id="catVial"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <div class="sort-toolbar">
+        <div class="results-count" id="resultsCount"></div>
+        <select class="sort-select" id="sortSelect" aria-label="Sort products">
+          <option value="latest">Sort by latest</option>
+          <option value="price-asc">Sort by price: low to high</option>
+          <option value="price-desc">Sort by price: high to low</option>
+          <option value="name">Sort by name</option>
+        </select>
+      </div>
+      <div class="product-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Research Use Only.</strong> All Recovery/Inflammation compounds are intended strictly for laboratory and research purposes. They are not intended to diagnose, treat, cure, or prevent any disease, and are not for human or veterinary use.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    initShell("products");
+    const CAT = "Recovery/Inflammation";
+
+    const lead = PRODUCTS.find(p => p.slug === "klow");
+    document.getElementById("catVial").innerHTML = lead && lead.image
+      ? `<img src="${lead.image}" alt="Recovery/Inflammation research peptide vial" onerror="imgFallback(this)">` : ICONS.vial;
+    document.getElementById("badge1").innerHTML = ICONS.clock + "<span>Extended Half-life</span>";
+    document.getElementById("badge2").innerHTML = ICONS.shield + "<span>99% Purity</span>";
+
+    const baseList = PRODUCTS.filter(p => p.category === CAT);
+    document.getElementById("resultsCount").textContent =
+      baseList.length === 1 ? "Showing 1 result" : "Showing all " + baseList.length + " results";
+
+    const priceVal = (p) => parseFloat((p.price.match(/[\d.]+/) || [0])[0]);
+    function sortList(mode) {
+      const list = baseList.slice();
+      if (mode === "price-asc") list.sort((a, b) => priceVal(a) - priceVal(b));
+      else if (mode === "price-desc") list.sort((a, b) => priceVal(b) - priceVal(a));
+      else if (mode === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+      return list;
+    }
+    function render() { renderProducts(sortList(document.getElementById("sortSelect").value), "catGrid"); }
+    document.getElementById("sortSelect").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>

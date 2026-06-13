@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Virgin Aminos | Research Peptide Brand</title>
+  <meta name="description" content="Virgin Aminos supports advanced scientific research with high-purity research peptides, reliable quality, clear information, and a smooth WhatsApp ordering experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero" style="padding-top:24px;">
+    <div class="container">
+      <div class="page-banner">
+        <div class="breadcrumb">Home / About</div>
+        <h1>About</h1>
+        <p>Supporting advanced scientific research through access to high-purity research peptides.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Our Mission</span>
+        <h2 class="section-title">About Virgin Aminos</h2>
+        <p>At Virgin Aminos, we are committed to supporting advanced scientific research through access to high-purity research peptides. Our mission is simple — deliver reliable quality, clear product information, and a smooth ordering experience.</p>
+        <p>We work with trusted partners and prioritize strict quality standards to ensure consistency, integrity, and customer confidence.</p>
+        <p>Our focus is not only on supplying peptides — it is on building trust through transparency, support, and professional service.</p>
+        <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="products.html">Browse Catalog <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="testing.html">Testing &amp; Quality</a>
+        </div>
+      </div>
+      <div class="media-card" id="aboutVisual">
+        <span class="media-caption">Laboratory-grade research</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY & MANUFACTURING -->
+  <section class="section" style="background:var(--light-bg);">
+    <div class="container">
+      <div class="center" style="margin-bottom:42px;">
+        <span class="eyebrow">Quality &amp; Manufacturing</span>
+        <h2 class="section-title">Precision at Every Stage</h2>
+        <p class="section-sub">From sourcing to documentation, every step is designed for consistency and confidence.</p>
+      </div>
+      <div class="quality-grid" id="qualityGrid"></div>
+    </div>
+  </section>
+
+  <!-- SHIPPING & SUPPORT -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="support-card" id="supportCard"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Research Use Only.</strong> Virgin Aminos products are intended strictly for laboratory and research purposes and are not for human or veterinary use. We make no medical claims and our compounds are not intended to diagnose, treat, cure, or prevent any disease.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    initShell("about");
+    document.getElementById("aboutVisual").insertAdjacentHTML("afterbegin", ICONS.molecule);
+    renderQuality("qualityGrid");
+    buildSupportCard("supportCard");
+  </script>
+</body>
+</html>
