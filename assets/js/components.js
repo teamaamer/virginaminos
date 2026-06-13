@@ -14,13 +14,10 @@ const LOGO_SVG = `<svg class="brand-logo" viewBox="0 0 48 48" fill="none" xmlns=
   <path d="M18 16h12M17.5 21h13M17.5 27h13M18 32h12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
 </svg>`;
 
-function brandMarkup(textClass = "") {
-  return `<a href="index.html" class="brand">
-    ${LOGO_SVG}
-    <span class="brand-text ${textClass}">
-      <span class="brand-name">Virgin Aminos</span>
-      <span class="brand-tag">Research Peptides</span>
-    </span>
+function brandMarkup(variant = "") {
+  const cls = variant === "footer" ? "brand brand--footer" : "brand";
+  return `<a href="index.html" class="${cls}" aria-label="Virgin Aminos — home">
+    <img class="brand-logo-img" src="assets/img/logoameno.png" alt="Virgin Aminos" width="624" height="400">
   </a>`;
 }
 
@@ -154,7 +151,7 @@ function renderFooter() {
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          ${brandMarkup()}
+          ${brandMarkup("footer")}
           <p>Virgin Aminos is a research peptide catalog dedicated to high-quality compounds, professional support, and a simple WhatsApp ordering experience.</p>
           <div class="footer-social">
             <a href="${VA.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${ICONS.instagram}</a>
