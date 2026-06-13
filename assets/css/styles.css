@@ -326,6 +326,8 @@ p { margin: 0 0 1em; }
   filter: blur(4px);
 }
 .vial-stage img, .vial-stage svg { width: 56%; position: relative; z-index: 1; filter: drop-shadow(0 20px 30px rgba(0,0,0,.4)); }
+.vial-stage .hero-logo-img { width: 84%; filter: brightness(0) invert(1) drop-shadow(0 16px 28px rgba(0,0,0,.45)); }
+#heroVial::after { display: none; }
 
 .research-note {
   display: inline-flex; align-items: center; gap: 8px;

@@ -2,9 +2,9 @@
 (function () {
   initShell("home");
 
-  // Hero vial render
+  // Hero visual — brand logo (white) on the dark stage
   const heroVial = document.getElementById("heroVial");
-  if (heroVial) heroVial.innerHTML = ICONS.vial;
+  if (heroVial) heroVial.innerHTML = `<img class="hero-logo-img" src="assets/img/logoameno.png" alt="Virgin Aminos">`;
 
   // Quality visual molecule
   const qv = document.getElementById("qualityVisual");
