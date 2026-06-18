@@ -130,7 +130,7 @@ const PRODUCTS = [
       "Intended for laboratory research use",
     ],
   },
-  { name: "MOTS-C",       category: "General Health/Wellness",      dosage: "10mg vial", price: "$75.00 – $160.00", featured: true },
+  { name: "MOTS-C",       category: "General Health/Wellness",      dosage: "10mg vial", price: "$75.00 – $160.00", image: "assets/img/general-health-wellness/mots-c.png", featured: true },
   { name: "Tesamorelin",  category: "Growth Hormone Secretagogue",  dosage: "5mg vial", price: "$95.00", featured: true },
   {
     name: "GHK-Cu", category: "Anti-Aging Products", slug: "ghk-cu", featured: true,
@@ -443,7 +443,7 @@ const PRODUCTS = [
       "Produced to high-purity standards",
     ],
   },
-  { name: "Melanotan 1",  category: "General Health/Wellness",      dosage: "10mg vial", price: "$60.00" },
+  { name: "Melanotan 1",  category: "General Health/Wellness",      dosage: "10mg vial", price: "$60.00", image: "assets/img/general-health-wellness/melanotan-1.png" },
   {
     name: "Oxytocin", category: "Hormonal", slug: "oxytocin",
     size: "10mg", dosage: "10mg", price: "$75.00",

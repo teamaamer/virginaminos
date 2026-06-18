@@ -33,4 +33,11 @@ copy "$B/Immunity/slu-pp-332.png"       "$B/immunity/slu-pp-332.png"
 echo "GLP (Cagrilintide image lives in General Health folder):"
 copy "$B/General Health/Wellness/Cagrilintide.png" "$B/glp-receptor-agonists/cagrilintide.png"
 
+echo "General Health / Wellness:"
+copy "$B/General Health/Wellness/MOTS-C.png"     "$B/general-health-wellness/mots-c.png"
+copy "$B/General Health/Wellness/Melanotan 1.png" "$B/general-health-wellness/melanotan-1.png"
+copy "$B/General Health/Wellness/Melanotan 2.png" "$B/general-health-wellness/melanotan-2.png"
+copy "$B/General Health/Wellness/AOD-9604.png"   "$B/general-health-wellness/aod-9604.png"
+copy "$B/General Health/Wellness/5-Amino-1MQ.png" "$B/general-health-wellness/5-amino-1mq.png"
+
 echo "Done."
